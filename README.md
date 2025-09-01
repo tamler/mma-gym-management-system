@@ -76,12 +76,21 @@ ENCRYPTION_KEY=your-32-character-encryption-key
 ADMIN_MASTER_PASSWORD=your-strong-master-password
 ```
 
-### 3. Start Development
+### 3. Development
 ```bash
 npm run dev
 ```
+Visit `http://localhost:3000` for development with hot reloading.
 
-Visit `http://localhost:3000` to see your gym website.
+### 4. Production Deployment
+```bash
+# Build the application
+npm run build
+
+# Start production server
+npm start
+```
+Visit `http://localhost:3000` for the optimized production build.
 
 ## 👨‍💼 Admin Access
 
@@ -172,6 +181,13 @@ The system supports multiple deployment platforms:
 3. Set environment variables
 4. Deploy automatically
 
+### Manual Production Deployment
+1. **Build the application**: `npm run build`
+2. **Upload build files**: Copy `.next` folder and `data` directory
+3. **Set environment variables** on hosting platform
+4. **Start production server**: `npm start`
+5. **Ensure Node.js 18+** runtime environment
+
 ## 📧 Email Setup (Zoho)
 
 1. Create Zoho email account
@@ -185,9 +201,9 @@ The system supports multiple deployment platforms:
 ## 🛠 Development Commands
 
 ```bash
-npm run dev          # Development server with Turbopack
-npm run build        # Production build
-npm run start        # Production server
+npm run dev          # Development server with hot reloading (Turbopack)
+npm run build        # Create optimized production build
+npm run start        # Start production server (requires build first)
 npm run lint         # ESLint code checking
 npm run create-admin # CLI admin account creation
 ```
@@ -200,6 +216,15 @@ npm run create-admin # CLI admin account creation
 - **Type Safety** - Full TypeScript coverage
 - **Modern Stack** - Latest Next.js 15 features
 - **Mobile-First** - Responsive design for all devices
+- **Production Optimized** - Static generation and server-side rendering
+
+## 🚀 Performance Features
+
+- **Turbopack** - Ultra-fast development builds
+- **Static Generation** - Pre-rendered pages for optimal performance
+- **Image Optimization** - Automatic image compression and formats
+- **Code Splitting** - Automatic bundle optimization
+- **Edge Runtime** - Deploy to edge locations globally
 
 ## 🤝 Contributing
 
@@ -208,7 +233,7 @@ This project was built with [Claude Code](https://claude.ai/code). To contribute
 1. Fork the repository
 2. Create a feature branch
 3. Make your changes
-4. Test thoroughly
+4. Test thoroughly with `npm run build`
 5. Submit a pull request
 
 ## 📄 License
