@@ -4,7 +4,7 @@ services:
     env: node
     region: ohio
     plan: starter
-    buildCommand: npm ci && npm run build
+    buildCommand: npm install && npm run build
     startCommand: npm start
     healthCheckPath: /
     autoDeploy: true
@@ -18,16 +18,20 @@ services:
       mountPath: /opt/render/project/src/data
       sizeGB: 1
 
-# Environment variables that need to be set in Render dashboard:
-# NEXTAUTH_SECRET=your-32-character-secret
-# NEXTAUTH_URL=https://your-app.onrender.com  
+# IMPORTANT: Set these environment variables in your Render dashboard:
+#
+# Required Environment Variables:
+# NEXTAUTH_SECRET=your-32-character-secret-key-here
+# NEXTAUTH_URL=https://your-app-name.onrender.com
 # EMAIL_SERVER_HOST=smtp.zoho.com
 # EMAIL_SERVER_PORT=465
-# EMAIL_SERVER_USER=your-email@domain.com
-# EMAIL_SERVER_PASSWORD=your-zoho-password
-# EMAIL_FROM=your-email@domain.com
-# ENCRYPTION_KEY=your-32-character-encryption-key
-# ADMIN_MASTER_PASSWORD=your-strong-password
+# EMAIL_SERVER_USER=your-email@yourdomain.com
+# EMAIL_SERVER_PASSWORD=your-zoho-app-password
+# EMAIL_FROM=your-email@yourdomain.com
+# ENCRYPTION_KEY=your-32-character-encryption-key-here
+# ADMIN_MASTER_PASSWORD=your-very-strong-password
+#
+# Optional Environment Variables:
 # GYM_NAME="Your Gym Name"
 # GYM_TIMEZONE="America/New_York"
 # CRON_SECRET=your-cron-secret
